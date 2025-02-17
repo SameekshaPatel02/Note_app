@@ -1,0 +1,177 @@
+/* Reset default styles and use border-box sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base body styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #e6f3ff;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Wave background container */
+.wave-container {
+    position: fixed;
+    inset: 0; /* Shorthand for top: 0; right: 0; bottom: 0; left: 0; */
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Individual wave styles */
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #4a90e2, #6ab0ff);
+    opacity: 0.3;
+}
+
+/* Wave animations */
+.wave:nth-child(1) { animation: wave 12s linear infinite; }
+.wave:nth-child(2) { animation: wave 8s linear infinite; opacity: 0.2; }
+.wave:nth-child(3) { animation: wave 6s linear infinite; opacity: 0.1; }
+
+/* Wave animation keyframes */
+@keyframes wave {
+    0% { transform: translateX(0) translateY(0) rotate(0); }
+    100% { transform: translateX(-50%) translateY(50%) rotate(360deg); }
+}
+
+/* Main app container */
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header styles */
+h1 {
+    text-align: center;
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+/* Input and search container styles */
+.input-container, .search-container {
+    margin-bottom: 20px;
+}
+
+/* Input and textarea styles */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #4a90e2;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-family: 'Roboto', sans-serif;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #4a90e2, #3a7bc8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 1px;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #3a7bc8, #2a6cb8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+/* Note styles */
+.note {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #4a90e2;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.note h3 {
+    margin-bottom: 10px;
+    color: #4a90e2;
+}
+
+.note p {
+    margin-bottom: 10px;
+}
+
+/* Note action buttons */
+.note-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.note-actions button {
+    background: linear-gradient(to bottom, #4a90e2, #3a7bc8);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.note-actions button:hover {
+    background: linear-gradient(to bottom, #3a7bc8, #2a6cb8);
+    transform: translateY(-1px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .app-container { padding: 10px; }
+    .note { padding: 10px; }
+    .note-actions {
+        position: static;
+        margin-top: 10px;
+    }
+    .note-actions button {
+        padding: 8px 12px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+
+
+
+
